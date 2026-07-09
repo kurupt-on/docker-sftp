@@ -3,10 +3,10 @@ version: "3.8"
 services:
   sftp:
     image: atmoz/sftp
-    container_name: sftp_server_01
+    container_name: "${CONT_NAME}"
     ports:
-      - "2222:22"
+      - "${HOST_PORT}:22"
     volumes:
-      - ./share:/home/${SFTP_USER}/share
-    command: ${SFTP_USER}:${SFTP_PASS}:10001
+      - ./share:/home/${USER_NAME}/share
+    command: ${USER_NAME}:${USER_PASS}:10001
     restart: always
