@@ -8,8 +8,17 @@ read -p "Nome de Usuário: " UN
 read -p "Senha do Usuário: " UP
 
 cat > ".env" << EOF
-VSTP_PORT=$HP
+HOST_PORT=$HP
 CONT_NAME=$CN
 USER_NAME=$UN
 USER_PASS=$UP
 EOF
+
+clear
+
+printf "Inicializando o container.\n"
+echo
+
+docker compose up -d
+
+echo
