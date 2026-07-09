@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  sftp:
+    image: atmoz/sftp
+    container_name: sftp_server_01
+    ports:
+      - "2222:22"
+    volumes:
+      - ./share:/home/${SFTP_USER}/share
+    command: ${SFTP_USER}:${SFTP_PASS}:10001
+    restart: always
