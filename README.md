@@ -28,16 +28,15 @@ cd docker-sftp
 ./setup.sh
 ```
 2. Informe os valores:
-- **Porta do Host**     -> Porta no host associada à porta do serviço dentro container;
-- **Nome do Container** -> Nome para diferenciar o container;
-- **Nome do Usuário**   -> Nome para acessar o servidor;
-- **Senha do Usuário**  -> Senha para acessar o servidor;
+- **Porta do Host**       -> Porta no host associada à porta do serviço dentro container;
+- **Nome do Container**   -> Nome para diferenciar o container;
+- **Nome do Usuário**     -> Nome para acessar o servidor;
+- **Senha do Usuário**    -> Senha para acessar o servidor;
 
-3. Execute o docker compose:
+3. Verifique o container:
 ```bash
-docker compose up -d
+docker ps
 ```
-
 ### Acessar
 
 1. Execute: `sftp -P [PORT] [USER]@localhost`
@@ -45,9 +44,9 @@ docker compose up -d
 
 ## Comandos básicos
 
-- **?**     -> lista comados;
-- **ls**    -> lista arquivos;
-- **get**   -> Pega arquivos do servidor;
-- **put**   -> envia arquivos ao servidor; 
+- **?**       -> lista comados;
+- **ls**      -> lista arquivos;
+- **get**     -> Pega arquivos do servidor;
+- **put**     -> envia arquivos ao servidor; 
 
 
