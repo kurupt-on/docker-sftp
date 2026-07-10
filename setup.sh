@@ -24,5 +24,5 @@ echo
 clear
 printf "Container criado.\n"
 echo
-printf "Acesse: sftp -p ${HP} ${UN}@localhost\n"
+printf "Acesse: sftp -P ${HP} ${UN}@localhost\n"
 echo
