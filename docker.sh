@@ -14,8 +14,8 @@ if [ $? -ne 0 ];then
 
 	. /etc/os-release
 
-	apt-cache update &>/dev/null
-	apt-cache install curl ca-certificates -y &>/dev/null
+	apt-get update &>/dev/null
+	apt-get install curl ca-certificates -y &>/dev/null
 	install -m 0755 -d /etc/apt/keyrings
 	curl -fsSL https://download.docker.com/linux/${ID}/gpg -o /etc/apt/keyrings/docker.asc &>/dev/null
 	chmod a+r /etc/apt/keyrings/docker.asc
@@ -29,8 +29,8 @@ Architecture: $( dpkg --print-architecture )
 Signed-by: /etc/apt/keyrings/docker.asc
 EOF
 
-	apt-cache update #&>/dev/null
-	apt-cache install docker-ce docker-ce-cli -y #&>/dev/null
+	apt-get update #&>/dev/null
+	apt-get install docker-ce docker-ce-cli -y #&>/dev/null
 
 	printf "Docker instalado.\n"
 else
