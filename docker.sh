@@ -22,8 +22,8 @@ if [ $? -ne 0 ];then
 	
 	cat > /etc/apt/sources.list.d/docker.sources << EOF
 Types: deb
-URIs: https://download.docker.com/linux/"${ID}"
-Suites: "${VERSION_CONDENAME}"
+URIs: https://download.docker.com/linux/${ID}
+Suites: ${VERSION_CODENAME}
 Components: stable
 Architecture: $( dpkg --print-architecture )  
 Signed-by: /etc/apt/keyrings/docker.asc
