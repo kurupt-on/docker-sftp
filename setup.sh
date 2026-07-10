@@ -15,10 +15,14 @@ USER_PASS=$UP
 EOF
 
 clear
-
-printf "Inicializando o container.\n"
+printf "Criando o container.\n"
 echo
 
 docker compose up -d
 
+echo
+clear
+printf "Container criado.\n"
+echo
+printf "Acesse: sftp -p ${HP} ${UN}@localhost\n"
 echo
