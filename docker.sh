@@ -29,11 +29,14 @@ Architecture: $( dpkg --print-architecture )
 Signed-by: /etc/apt/keyrings/docker.asc
 EOF
 
-	apt-get update #&>/dev/null
-	apt-get install docker-ce docker-ce-cli -y #&>/dev/null
+	printf "Atualizando lista de pacotes.\n"
+	apt-get update &>/dev/null
+	printf "Instalando pacotes.\n"
+	apt-get install docker-ce docker-ce-cli -y &>/dev/null
 
 	printf "Docker instalado.\n"
 else
 	printf "Docker presente.\n"
 fi
+systemctl enable --now  docker.service
 	

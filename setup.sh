@@ -2,6 +2,10 @@
 
 clear
 
+./docker.sh
+
+clear
+
 read -p "Porta no Host: " HP
 read -p "Nome do Container: " CN
 read -p "Nome de Usuário: " UN
