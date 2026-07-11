@@ -4,9 +4,9 @@ Script simples para implementar um servidor **sftp** via  **Docker**.
 
 ## Pré-requisitos
 
-- Debian (ao menos o 11)
+- Debian (11) ou Ubuntu (22.04)
 - Docker: `docker-ce` e `docker-ce-cli`
-- Pacotes: `openssh-client`
+- Pacote: `openssh-client`
 
 ## Como usar
 
@@ -42,11 +42,14 @@ docker ps
 1. Execute: `sftp -P [PORT] [USER]@localhost`
 2. Digite a senha escolhida.
 
-## Comandos básicos
+### Alguns comandos
 
-- **?**       -> lista comados;
-- **ls**      -> lista arquivos;
-- **get**     -> Pega arquivos do servidor;
-- **put**     -> envia arquivos ao servidor; 
+- **?**       -> Lista comados;
+- **ls**      -> Lista arquivos;
+- **get**     -> Baixa arquivos do servidor;
+- **put**     -> Envia arquivos ao servidor;
+- **exit**    -> Sai do ambiente ;
 
+## Licença
 
+Este projeto está sob a licença MIT.
