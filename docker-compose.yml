@@ -1,16 +1,12 @@
 services:
   sftp:
-    image: linuxserver/openssh-server
+    build: .
     container_name: "${CONT_NAME}"
     ports:
-      - "${HOST_PORT}:2222"
+      - "${HOST_PORT}:22"
     environment:
-      - PUID=10000
-      - PGID=10000
-      - TZ=America/Sao_Paulo
       - USER_NAME=${USER_NAME}
-      - USER_PASSWORD=${USER_PASS}
-      - PASSWORD_ACCESS=true
+      - USER_PASS=${USER_PASS}
     volumes:
-      - ./share:/config/dropins
+      - ./share:/opt/SFTP-SERVER
     restart: always
