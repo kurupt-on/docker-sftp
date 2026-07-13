@@ -2,8 +2,8 @@
 
 printf "Criando usuário...\n"
 sleep 1
-groupadd sftp_group
-useradd -m -s /bin/false -g sftp_group "${USER_NAME}"
+groupadd -g 10000 sftp_group
+useradd -d /DADOS -M -s /bin/false -g sftp_group -u 10000 "${USER_NAME}"
 echo "${USER_NAME}:${USER_PASS}" | chpasswd
 mkdir -p /opt/SFTP-SERVER/DADOS
 chown root:root /opt/SFTP-SERVER
