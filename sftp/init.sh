@@ -1,14 +1,16 @@
 #!/bin/bash
 
-printf "Criando usuário.\n"
+printf "Criando usuário...\n"
 sleep 1
 groupadd sftp_group
-useradd -m -s /bin/false -g sftp_group ${USER_NAME}
-passwd -s ${USER_PASS}
-mkdir /opt/SFTP-SERVER
+useradd -m -s /bin/false -g sftp_group "${USER_NAME}"
+echo "${USER_NAME}:${USER_PASS}" | chpasswd
+mkdir -p /opt/SFTP-SERVER/DADOS
 chown root:root /opt/SFTP-SERVER
-chmod 0755
-mkdir /opt/SFTP-SERVER/DADOS
+chmod 0755 /opt/SFTP-SERVER
 chown ${USER_NAME}:sftp_group /opt/SFTP-SERVER/DADOS
+chmod 0770 /opt/SFTP-SERVER/DADOS
 
+printf "Iniciando servidor SFTP...\n"
 
+exec /usr/sbin/sshd -D
