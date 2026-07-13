@@ -1,6 +1,6 @@
 services:
   sftp:
-    build: .
+    build: ./sftp/
     container_name: "${CONT_NAME}"
     ports:
       - "${HOST_PORT}:22"
