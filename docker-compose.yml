@@ -1,6 +1,6 @@
 services:
   sftp:
-    image: linuxserver/openssh-server
+    build: ./sftp/
     container_name: "${CONT_NAME}"
     ports:
       - "${HOST_PORT}:2222"
