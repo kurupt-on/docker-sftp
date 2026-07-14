@@ -3,10 +3,14 @@ services:
     build: ./sftp/
     container_name: "${CONT_NAME}"
     ports:
-      - "${HOST_PORT}:22"
+      - "${HOST_PORT}:2222"
     environment:
+      - PUID=10000
+      - PGID=10000
+      - TZ=America/Sao_Paulo
       - USER_NAME=${USER_NAME}
-      - USER_PASS=${USER_PASS}
+      - USER_PASSWORD=${USER_PASS}
+      - PASSWORD_ACCESS=true
     volumes:
-      - ./share:/opt/SFTP-SERVER
+      - ./share:/config/dropins
     restart: always
