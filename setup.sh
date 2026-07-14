@@ -1,5 +1,7 @@
 #!/bin/bash
 
+[ -d ./share ] && rm -rf ./share &>/dev/null
+
 clear
 
 ./docker.sh
